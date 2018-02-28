@@ -75,9 +75,12 @@ if (!is_null($events['events'])) {
                           'text' => $output
                       ];
   }else if($text=='เฌอปราง'){
-    $messages =       [		'type' => 'text',
-                          'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
-                      ];
+
+                      $placeName = "ที่ตั้งร้าน";
+                    $placeAddress = "แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร ประเทศไทย";
+                    $latitude = 13.780401863217657;
+                    $longitude = 100.61141967773438;
+                    $messages = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);
   }else{
 
     $messages =       [		'type' => 'text',
