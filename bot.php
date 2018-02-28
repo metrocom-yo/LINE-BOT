@@ -23,7 +23,22 @@ if (!is_null($events['events'])) {
     // Get replyToken
     $replyToken = $event['replyToken'];
 
-if($text=='เฌอปราง'){
+  if(substr($text,0,4)=='node'){
+    $textgo = trim(str_replace('node','',$text));
+    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$textgo";
+    $output = file_get_contents($url);
+    $messages =       [		'type' => 'text',
+                          'text' => $output
+                      ];
+
+  }else if(iconv_substr($text,0,5,"UTF-8")=="เบอร์"){
+    $textgo = trim(str_replace("เบอร์","",$text));
+    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_emp.php?input=$textgo";
+    $output = file_get_contents($url);
+    $messages =       [		'type' => 'text',
+                          'text' => $output
+                      ];
+  }else if($text=='เฌอปราง'){
     $messages =       [		'type' => 'text',
                           'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
                       ];
