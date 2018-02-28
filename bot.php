@@ -23,22 +23,7 @@ if (!is_null($events['events'])) {
     // Get replyToken
     $replyToken = $event['replyToken'];
 
-  if(substr($text,0,4)=='node'){
-    $textgo = trim(str_replace('node','',$text));
-    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$textgo";
-    $output = file_get_contents($url);
-    $messages =       [		'type' => 'text',
-                          'text' => $output
-                      ];
-
-  }else if(iconv_substr($text,0,5,"UTF-8")=="เบอร์"){
-    $textgo = trim(str_replace("เบอร์","",$text));
-    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_emp.php?input=$textgo";
-    $output = file_get_contents($url);
-    $messages =       [		'type' => 'text',
-                          'text' => $output
-                      ];
-  }else if($text=='เฌอปราง'){
+if($text=='เฌอปราง'){
     $messages =       [		'type' => 'text',
                           'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
                       ];
@@ -55,8 +40,7 @@ if (!is_null($events['events'])) {
 
     // Make a POST Request to Messaging API to reply to sender
     $url = 'https://api.line.me/v2/bot/message/reply';
-    $data = [				'replyToken' => $replyToken,
-    'messages' => [$messages],			];
+    $data = ['replyToken' => $replyToken,'messages' => [$messages],	];
     $post = json_encode($data);
     $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
     $ch = curl_init($url);
