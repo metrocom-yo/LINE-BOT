@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
     $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$textgo";
     $output = file_get_contents($url);
     $messages =       [		'type' => 'text',
-                          'text' => $output
+                          'text' => $textgo
                       ];
 
   }else if(iconv_substr($text,0,5,"UTF-8")=="เบอร์"){
@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
     $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_emp.php?input=$textgo";
     $output = file_get_contents($url);
     $messages =       [		'type' => 'text',
-                          'text' => $output
+                          'text' => $textgo
                       ];
   }else if($text=='เฌอปราง'){
     $messages =       [		'type' => 'text',
