@@ -113,7 +113,7 @@ if(!is_null($events)){
                                 )
                         ));
                     break;
-                case "BNK48":
+                case "bnk":
                     $replyData = new TemplateMessageBuilder('Confirm Template',
                         new ConfirmTemplateBuilder(
                                 'BNK48 คุณโอชิใคร มากที่สุด ??',
