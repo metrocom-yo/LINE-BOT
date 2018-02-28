@@ -24,16 +24,16 @@ if (!is_null($events['events'])) {
     $replyToken = $event['replyToken'];
 
   if(substr($text,0,4)=='node'){
-    $text = trim(str_replace('node','',$text));
-    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$text";
+    $textgo = trim(str_replace('node','',$text));
+    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$textgo";
     $output = file_get_contents($url);
     $messages =       [		'type' => 'text',
                           'text' => $output
                       ];
 
   }else if(iconv_substr($text,0,5,"UTF-8")=="เบอร์"){
-    $text = trim(str_replace("เบอร์","",$text));
-    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_emp.php?input=$text";
+    $textgo = trim(str_replace("เบอร์","",$text));
+    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_emp.php?input=$textgo";
     $output = file_get_contents($url);
     $messages =       [		'type' => 'text',
                           'text' => $output
