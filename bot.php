@@ -123,6 +123,10 @@ if(!is_null($events)){
                                         'รัก เฌอปราง'
                                     ),
                                     new MessageTemplateActionBuilder(
+                                        'คุณไข่',
+                                        'รัก คุณไข่'
+                                    ),
+                                    new MessageTemplateActionBuilder(
                                         'มิวสิค',
                                         'รัก มิวสิค'
                                     )
