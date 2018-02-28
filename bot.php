@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 
   if(substr($text,0,4)=='node'){
     $textgo = trim(str_replace('node','',$text));
-    $url 	= "http://ro7.triplet.co.th/support/app/webservice/bot_node.php?input=$textgo";
+    $url 	= "http://ro6map.3bb.co.th/webservice/bot_node.php?input=?input=$textgo";
     $output = file_get_contents($url);
     $messages =       [		'type' => 'text',
                           'text' => $output
