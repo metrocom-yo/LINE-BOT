@@ -116,15 +116,15 @@ if(!is_null($events)){
                 case "bnk":
                     $replyData = new TemplateMessageBuilder('Confirm Template',
                         new ConfirmTemplateBuilder(
-                                'Confirm template builder ชอบ',
+                                'BNK48 คุณชอบใครมากที่สุด ?',
                                 array(
                                     new MessageTemplateActionBuilder(
-                                        'Yes',
-                                        'Text Yes'
+                                        'เฌอปราง',
+                                        'รัก เฌอปราง'
                                     ),
                                     new MessageTemplateActionBuilder(
-                                        'No',
-                                        'Text NO'
+                                        'มิวสิค',
+                                        'รัก มิวสิค'
                                     )
                                 )
                         )
