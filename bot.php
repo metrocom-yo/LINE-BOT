@@ -23,6 +23,8 @@ if (!is_null($events['events'])) {
     // Get replyToken
     $replyToken = $event['replyToken'];
 
+    $value = print_r($event);
+
     if($text=='เฌอปราง'){
       $messages =       [		'type' => 'text',
                             'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
@@ -30,7 +32,7 @@ if (!is_null($events['events'])) {
     }else{
 
       $messages =       [		'type' => 'text',
-                            'text' => $text
+                            'text' => $value
                         ];
     }
 
