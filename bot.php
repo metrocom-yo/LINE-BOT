@@ -4,10 +4,13 @@ $access_token = 'OBndRkQEmWPqffF0HTvXjhbX0W5XUt2cqYfTv46lbblXx0+H5H1oaJseLWjmGPe
 
 // Get POST body content
 $content = file_get_contents('php://input');
+
 // Parse JSON
 $events = json_decode($content, true);
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
+
   // Loop through each event
   foreach ($events['events'] as $event) {
 
@@ -20,9 +23,20 @@ if (!is_null($events['events'])) {
     // Get replyToken
     $replyToken = $event['replyToken'];
 
+    if($text=='เฌอปราง'){
+      $messages =       [		'type' => 'text',
+                            'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
+                        ];
+    }else{
+
+      $messages =       [		'type' => 'text',
+                            'text' => 'คิดถึงนะค่ะ ตั้งใจทำงานหละ'
+                        ];
+    }
+
     // Build message to reply back
-    $messages = [				'type' => 'text',				'text' => $text			];
-    
+    //$messages = [				'type' => 'text',				'text' => $text			];
+
     // Make a POST Request to Messaging API to reply to sender
     $url = 'https://api.line.me/v2/bot/message/reply';
     $data = [				'replyToken' => $replyToken,
@@ -38,7 +52,7 @@ if (!is_null($events['events'])) {
     $result = curl_exec($ch);
     curl_close($ch);
     echo $result . "";
-  }
+    }
 }
 }
 
