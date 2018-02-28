@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
     }else{
 
       $messages =       [		'type' => 'text',
-                            'text' => 'ไม่ว่างนะค่ะ เดี๋ยวถ้าเสร็จธุระแล้วจะตอบกลับน้าาา อย่างอลหละ'
+                            'text' => $text	
                         ];
     }
 
