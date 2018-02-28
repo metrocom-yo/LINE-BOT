@@ -113,18 +113,22 @@ if(!is_null($events)){
                                 )
                         ));
                     break;
-                case "tm":
+                case "BNK48":
                     $replyData = new TemplateMessageBuilder('Confirm Template',
                         new ConfirmTemplateBuilder(
-                                'Confirm template builder',
+                                'BNK48 คุณโอชิใคร มากที่สุด ??',
                                 array(
                                     new MessageTemplateActionBuilder(
-                                        'Yes',
-                                        'Text Yes'
+                                        'เฌอปราง',
+                                        'รัก เฌอปราง'
                                     ),
                                     new MessageTemplateActionBuilder(
-                                        'No',
-                                        'Text NO'
+                                      'มิวสิค',
+                                      'รัก มิวสิค'
+                                    ),
+                                    new MessageTemplateActionBuilder(
+                                      'คุณไข่',
+                                      'รัก คุณไข่'
                                     )
                                 )
                         )
